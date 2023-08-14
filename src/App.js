@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Practice from "./Practice";
+import Practice2 from "./practice2";
 
 const messages = [
   "Learn React ⚛️",
@@ -50,6 +50,7 @@ export default function App() {
           </div>
         </div>
       )}
+      <Practice2 />
       {/* <Practice /> */}
     </>
   );
