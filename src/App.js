@@ -22,7 +22,6 @@ export default function App() {
       <button className="close" onClick={() => setIsOpen((is) => !is)}>
         &times;
       </button>
-
       {isOpen && (
         <div className="steps">
           <div className="numbers">
@@ -35,23 +34,26 @@ export default function App() {
             step {step}:{messages[step - 1]}
           </div>
           <div className="buttons">
-            <button
-              style={{ backgroundColor: "#7950f2", color: "#fff" }}
-              onClick={() => handlePrevious()}
-            >
-              Previous
-            </button>
-            <button
-              style={{ backgroundColor: "#7950f2", color: "#fff" }}
-              onClick={() => handleNext()}
-            >
-              Next
-            </button>
+            <Button textColor="#fff" bgColor="#7950f2" onClick={handlePrevious}>
+              <span>👈</span>"Previous"
+            </Button>
+            <Button textColor="#fff" bgColor="#7950f2" onClick={handleNext}>
+              "Next" <span>"👉</span>
+            </Button>
           </div>
         </div>
       )}
-      <Practice2 />
-      {/* <Practice /> */}
     </>
+  );
+}
+
+function Button({ bgColor, textColor, onClick, children }) {
+  return (
+    <button
+      style={{ backgroundColor: bgColor, color: textColor }}
+      onClick={onClick}
+    >
+      {children}
+    </button>
   );
 }
